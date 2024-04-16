@@ -1,0 +1,13 @@
+.app-container {
+  display: flex; 
+  justify-content: space-between;
+  padding: 20px;
+  background-image: url('../icons/bg.png'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+.card-container{
+  padding-left: 600px;
+  overflow: hidden;
+}

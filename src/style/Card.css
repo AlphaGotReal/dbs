@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: 700px;
+  height: 220px;
+}
+
+.card-content {
+  display: flex;
+}
+
+.card-image {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 200px; 
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-details {
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-description {
+  margin: 5px 0;
+  word-wrap: break-word;
+}
+
+.card-category {
+  font-style: italic;
+  color: #666;
+}
