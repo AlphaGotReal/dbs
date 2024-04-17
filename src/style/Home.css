@@ -1,0 +1,12 @@
+.home-button {
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+}
+
+.home-button:hover {
+  text-decoration: underline;
+}

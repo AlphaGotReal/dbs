@@ -1,12 +1,15 @@
 import "../style/Login.css";
+import { Outlet, Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="login">
-      <button className="login-button">
-        Login / Sign Up
-      </button>
-    </div>
+    <>
+      <div className="login">
+        <Link to="/login" className="login-button">
+          Login / Sign Up
+        </Link>
+      </div>
+    </>
   );
 }
 
