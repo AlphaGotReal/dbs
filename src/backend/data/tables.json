@@ -1,4 +1,16 @@
 {
+  "Agent": {
+    "name": "Agent",
+    "attributes_with_type": {
+      "agent_id": "INT",
+      "username": "VARCHAR(50)",
+      "email": "VARCHAR(50)"
+    },
+    "keys": {
+      "PRIMARY KEY (agent_id)": true
+    }
+  },
+
   "Property": {
     "name": "Property",
     "attributes_with_type": {
@@ -19,27 +31,13 @@
       "FOREIGN KEY (agent_id) REFERENCES Agent(agent_id)": true
     }
   },
-  "Agent": {
-    "name": "Agent",
-    "attributes_with_type": {
-      "agent_id": "INT",
-      "first_name": "VARCHAR(50)",
-      "last_name": "VARCHAR(50)",
-      "email": "VARCHAR(50)",
-      "phone": "VARCHAR(20)"
-    },
-    "keys": {
-      "PRIMARY KEY (agent_id)": true
-    }
-  },
   "Client": {
     "name": "Client",
     "attributes_with_type": {
       "client_id": "INT",
-      "first_name": "VARCHAR(50)",
-      "last_name": "VARCHAR(50)",
+      "username": "VARCHAR(50)",
       "email": "VARCHAR(50)",
-      "phone": "VARCHAR(20)"
+			"password": "VARCHAR(20)"
     },
     "keys": {
       "PRIMARY KEY (client_id)": true
