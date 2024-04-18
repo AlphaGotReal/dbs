@@ -19,6 +19,7 @@ h2 {
 .input-group label {
   display: block;
   margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 .input-group input {

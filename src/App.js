@@ -53,9 +53,11 @@ function App({ auth }) {
       <div className="app-container">
         <HomeButton></HomeButton>
         <SearchBar onSearchQueryChange={handleSearchQueryChange} />
-        { (!auth.logged) ? <Login></Login> : <p>You're logged in.</p>}
+        { (!auth.logged) ? <Login></Login> : <div className="circle">{ auth["details"]["username"][0].toUpperCase() }</div> }
       </div>
+      
       <br/>
+
       <div className="main-container">
 
         <div className="card-container">

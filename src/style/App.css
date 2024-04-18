@@ -26,3 +26,14 @@
   height: 600px;;
 }
 
+.circle {
+  width: 50px; /* Adjust the size as needed */
+  height: 50px; /* Adjust the size as needed */
+  border-radius: 50%; /* Ensures it's a circle */
+  background-color: #007bff; /* Change the background color as desired */
+  color: white; /* Change the text color as desired */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

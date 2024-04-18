@@ -21,7 +21,9 @@ function AdSlider() {
       <div>
         <img src="https://cdn.discordapp.com/attachments/792656939573313546/1230467835415756821/image.png?ex=66336d78&is=6620f878&hm=650b64d2503a0fed3da69ac0c6a7ef2dc0db9ff9b4890b331f31bd54a8a9de9d&" alt="Image 2" />
       </div>
-      {/* Add more images as required */}
+      <div>
+        <img src="https://cdn.discordapp.com/attachments/792656939573313546/1230472444582826036/image.png?ex=663371c3&is=6620fcc3&hm=a9aafb5f703e8b9661f150577f004e16de39b34586be9850f5fd6ec119584b4f&" alt="Image 3" />
+      </div>
     </Slider>
   );
 }

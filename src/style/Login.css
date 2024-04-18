@@ -13,4 +13,5 @@
 
 .login-button:hover {
   background-color: #60a7f3;
+  transition: background-color 0.4s;
 }
