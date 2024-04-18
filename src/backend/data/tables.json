@@ -101,15 +101,13 @@
     "attributes_with_type": {
       "rating_id": "INT",
       "property_id": "INT",
-      "client_id": "INT",
       "rating_value": "INT",
       "review": "TEXT",
       "date": "DATE"
     },
     "keys": {
       "PRIMARY KEY (rating_id)": true,
-      "FOREIGN KEY (property_id) REFERENCES Property(property_id)": true,
-      "FOREIGN KEY (client_id) REFERENCES Client(client_id)": true
+      "FOREIGN KEY (property_id) REFERENCES Property(property_id)": true
     }
   }
 }

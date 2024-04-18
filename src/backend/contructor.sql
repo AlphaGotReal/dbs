@@ -34,13 +34,11 @@ CREATE TABLE Transaction(
   transaction_id INT,
 	property_id INT,
 	client_id INT,
-	agent_id INT,
-	transaction_date DATE,
+	transaction_date VARCHAR(11),
 	sale_price FLOAT(10, 2), 
   PRIMARY KEY (transaction_id),
 	FOREIGN KEY (property_id) REFERENCES Property(property_id),
-	FOREIGN KEY (client_id) REFERENCES Client(client_id),
-	FOREIGN KEY (agent_id) REFERENCES Agent(agent_id));
+	FOREIGN KEY (client_id) REFERENCES Client(client_id));
 
 CREATE TABLE Image( 
   image_id INT,
@@ -48,13 +46,14 @@ CREATE TABLE Image(
 	image_url VARCHAR(1000), 
   PRIMARY KEY (image_id),
 	FOREIGN KEY (property_id) REFERENCES Property(property_id));
-  CREATE TABLE PropertyFeatures( 
+
+CREATE TABLE PropertyFeatures( 
   feature_id INT,
 	property_id INT,
 	feature_name VARCHAR(50), 
   PRIMARY KEY (feature_id),
 	FOREIGN KEY (property_id) REFERENCES Property(property_id));
-  
+
 CREATE TABLE PropertyCategories( 
   category_id INT,
 	category_name VARCHAR(50),
@@ -65,13 +64,9 @@ CREATE TABLE PropertyCategories(
 CREATE TABLE PropertyRatings( 
   rating_id INT,
 	property_id INT,
-	client_id INT,
 	rating_value INT,
 	review TEXT,
 	date DATE, 
   PRIMARY KEY (rating_id),
-	FOREIGN KEY (property_id) REFERENCES Property(property_id),
-	FOREIGN KEY (client_id) REFERENCES Client(client_id));
-
-select * from Client;
+	FOREIGN KEY (property_id) REFERENCES Property(property_id));
 

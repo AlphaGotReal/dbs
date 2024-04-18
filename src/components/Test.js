@@ -1,9 +1,28 @@
+import React, { useState } from 'react';
 
-function Test() {
-    return (
-        <div>
-        </div>
-    );
-}
+const HoverText = () => {
+  const [isHovered, setIsHovered] = useState(false);
 
-export default Test;
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {isHovered ? (
+        <p>This text changes on hover!</p>
+      ) : (
+        <p>Hover over me to see the change!</p>
+      )}
+    </div>
+  );
+};
+
+export default HoverText;

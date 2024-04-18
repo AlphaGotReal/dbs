@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../style/RegisterPage.css'; // Import CSS file for styling
 import HomeButton from './Home';
 
-function RegisterPage() {
+function RegisterPage({ setAuth }) {
+
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,12 +22,19 @@ function RegisterPage() {
     }).then(response => response.json())
     .then(data => {
       setSuccess(data.successStatus);
+      let details = {"username": username, "client_id": data.client_id};
+      if (data.successStatus === 1) {
+        setAuth({"logged": true, "details": details});
+        navigate("/");
+      }
     });
   };
 
   return (
     <>
-      <HomeButton></HomeButton>
+      <div style={{ marginTop: "20px", marginLeft: "20px"}}>
+        <HomeButton />
+      </div>
       <div className="register-container">
         <h2>Register</h2>
         <form onSubmit={handleRegister}>

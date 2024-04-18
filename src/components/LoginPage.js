@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../style/LoginPage.css'; // Import CSS file for styling
 import HomeButton from './Home';
 
-function LoginPage({ setAuthAtRoot }) {
+function LoginPage({ setAuth }) {
+
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,12 +23,18 @@ function LoginPage({ setAuthAtRoot }) {
     .then(data => {
       setSuccess(data.successStatus);
       let details = {"username": username, "client_id": data.client_id};
+      if (data.successStatus === 1) {
+        setAuth({"logged": true, "details": details});
+        navigate("/");
+      }
     });
   };
 
   return (
     <>
-      <HomeButton></HomeButton>
+      <div style={{ marginTop: "20px", marginLeft: "20px"}}>
+        <HomeButton />
+      </div>
       <div className="login-container">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>

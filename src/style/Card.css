@@ -4,8 +4,8 @@
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 20px;
-  width: 700px;
-  height: 220px;
+  width: 900px;
+  height: 250px;
 }
 
 .card-content {
@@ -25,6 +25,27 @@
   padding: 15px;
 }
 
+/* .card-address {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333; 
+  margin-bottom: 20px; 
+}
+
+.card-address strong {
+  font-weight: bold;
+}
+
+.card-address p {
+  margin: 0; 
+}
+
+.card-address span {
+  display: block; 
+}
+
+
 .card-title {
   margin: 0;
 }
@@ -37,4 +58,113 @@
 .card-category {
   font-style: italic;
   color: #666;
+}
+
+.star-rating {
+  font-size: 24px; 
+}
+
+.star {
+  color: #ffd700; 
+}
+
+.filled {
+  color: #ffd700; 
+}
+
+.card-zip-code {
+  font-size: 13px;
+  font-style: italic;
+  color: #666;
+}*/
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.card-address {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.card-zip-code {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.card-category {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.card-rating {
+  margin-bottom: 0.5rem;
+}
+/* Card Status */
+.card-status {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Card Features */
+.card-features {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Card Agent */
+.card-agent {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.card-size {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.card-buy {
+  background-color: #000000; /* Green */
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.card-buy:hover {
+  background-color: #258b4c; /* Darker green on hover */
+}
+
+.card-bought {
+  background-color: #258b4c; /* Green */
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.card-bought:hover {
+  background-color: #258b4c; /* Darker green on hover */
 }

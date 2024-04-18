@@ -5,8 +5,9 @@ import HomeButton from "./components/Home";
 import "./style/App.css"
 
 import React, { useState, useEffect } from 'react';
+import AdSlider from "./components/AdSlider";
 
-function App() {
+function App({ auth }) {
 
   const [searchQuery, setSearchQuery] = useState('');  
   const [cards, setCards] = useState({"data": []});
@@ -15,10 +16,9 @@ function App() {
     fetch("/process/query", {
       method: "POST",
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ "query": query })
+      body: JSON.stringify({ "query": query , "auth": auth})
     }).then(response => response.json())
     .then(data => {
-      console.log(data);
       setCards(data); 
     });
   }
@@ -53,28 +53,49 @@ function App() {
       <div className="app-container">
         <HomeButton></HomeButton>
         <SearchBar onSearchQueryChange={handleSearchQueryChange} />
-        <Login/>
+        { (!auth.logged) ? <Login></Login> : <p>You're logged in.</p>}
       </div>
       <br/>
-      <div className="card-container">
-        {cards.data.length > 0 ? (
-          cards.data.map((card) => (
-            <>
-              <Card
-                imageUrl={card.imageUrl}
-                title={card.title}
-                description={card.description}
-                category={card.category}
-              />
-              {/* <br/> */}
-            </>
-          ))
-        ) : (
-          <p>No cards found.</p>
-        )}
+      <div className="main-container">
+
+        <div className="card-container">
+          {cards.data.length > 0 ? (
+            cards.data.map((card) => (
+              <>
+                <Card
+                  auth={auth}
+                  property_id={card.property_id}
+                  imageUrl={card.imageUrl}
+                  title={card.title}
+                  description={card.description}
+                  address={card.address}
+                  city={card.city}
+                  state={card.state}
+                  zip={card.zip}
+                  category={card.category}
+                  rating={card.rating}
+                  features={card.features}
+                  agent={card.agent}
+                  size={card.size}
+                  price={card.price}
+                  prop_status={card.prop_status}
+                  transaction_made={card.transaction_made}
+                />
+                {/* <br/> */}
+              </>
+            ))
+          ) : (
+            <p>No cards found.</p>
+          )}
+        </div>
+
+        <div className="ad-container">
+          <AdSlider></AdSlider>
+        </div>
+
       </div>
       <div className="debug">
-        {/* <h5>{ console.log("data: ", data) }</h5> */}
+        {/* <h5>{ console.log(auth)} </h5> */}
       </div>
     </>
   );
